@@ -30,8 +30,13 @@
 .toolbar_navigation-items li{
     padding: 0 1rem;
 }
-.toolbar_navigation-items a:hover, 
+.toolbar_navigation-items a:hover{
+    color: yellow; 
+}
 .toolbar_navigation-items a:active{
-    color: red; 
+    color: #4d7357; 
 
+}
+.spacer{
+    flex: 1; 
 }

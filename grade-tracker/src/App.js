@@ -8,7 +8,7 @@ class App extends Component {
         <Toolbar/>
         <main style={{marginTop:'66px'}}>
         <p>This is the page content!</p>
-        </main>
+        </main>  
       </div>
     );
   }
