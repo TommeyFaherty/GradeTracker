@@ -10,10 +10,11 @@ import {
   IonTabs
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { apps, flash, send,people,body } from 'ionicons/icons';
+import { apps, flash, send,people,body, archive } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
+import Tab4 from './pages/Tab4';
 import Details from './pages/Details';
 
 
@@ -45,7 +46,8 @@ const App: React.FC = () => (
           <Route path="/tab2" component={Tab2} exact={true} />
           <Route path="/tab2/details" component={Details} />
           <Route path="/tab3" component={Tab3} />
-          <Route path="/" render={() => <Redirect to="/CrsMgmt" />} exact={true} />
+          <Route path="/tab4" component={Tab4} />
+          <Route path="/" render={() => <Redirect to="/tab2" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/CrsMgmt">
@@ -59,6 +61,10 @@ const App: React.FC = () => (
           <IonTabButton tab="tab3" href="/tab3">
           <IonIcon icon={people} />
           <IonLabel>Employees</IonLabel>
+         </IonTabButton>
+         <IonTabButton tab="tab4" href="/tab4">
+          <IonIcon icon={archive} />
+          <IonLabel>Contact us</IonLabel>
          </IonTabButton>
         </IonTabBar>
       </IonTabs>
