@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -7,15 +7,27 @@ import {
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonTabs
+  IonTabs,
+  IonMenu, 
+  IonToolbar,
+  IonList,
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonItem,
+  IonSplitPane,
+  IonPage
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { apps, flash, send,people,body, archive } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
+import Home from './pages/Home'; 
 import Details from './pages/Details';
+import { slide as Menu } from 'react-burger-menu';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -37,39 +49,32 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/CrsMgmt" component={Tab1} exact={true} />
-          <Route path="/tab2" component={Tab2} exact={true} />
-          <Route path="/tab2/details" component={Details} />
-          <Route path="/tab3" component={Tab3} />
-          <Route path="/tab4" component={Tab4} />
-          <Route path="/" render={() => <Redirect to="/tab2" />} exact={true} />
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/CrsMgmt">
-            <IonIcon icon={flash} />
-            <IonLabel>Course Managment</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={body} />
-            <IonLabel>Log in</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-          <IonIcon icon={people} />
-          <IonLabel>Employees</IonLabel>
-         </IonTabButton>
-         <IonTabButton tab="tab4" href="/tab4">
-          <IonIcon icon={archive} />
-          <IonLabel>Contact us</IonLabel>
-         </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
+export const App: React.FC = () => (
+  <Router>
+    <div id="app">
+      <IonApp>
+        <IonSplitPane contentId="main">
+          <div id="menu">
+            <IonToolbar>
+              <IonTitle>
+                Menu
+              </IonTitle>
+            </IonToolbar>
+          </div>
+          <IonPage id="main">
+            <Switch>
+            <Route path="/CrsMgmt" component={Home} exact={true} />
+            <Route path="/tab2" component={Tab2} exact={true} />
+            <Route path="/tab2/details" component={Details} />
+            <Route path="/tab3" component={Tab3} />
+            <Route path="/tab4" component={Tab4} />
+            <Route path="/" component={Home} />} 
+            </Switch>
+          </IonPage>
+        </IonSplitPane>
+      </IonApp>
+    </div>
+  </Router>
 );
 
 export default App;

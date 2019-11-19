@@ -1,9 +1,10 @@
-import { IonContent, IonButton, IonHeader, IonItem, IonInput, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonButton, IonHeader,IonMenuButton,IonMenu,IonIcon, IonItem, IonInput, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
-import { apps, flash, send,people,body } from 'ionicons/icons';
+import { apps, flash, send,people,body,home } from 'ionicons/icons';
 
 const Tab2: React.FC = () => {
   return (
+
     <IonPage>
       <IonHeader>
         <IonToolbar>
@@ -11,6 +12,7 @@ const Tab2: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
+
         <IonList>
           <IonItem>
             <IonInput placeholder="Username"></IonInput>
