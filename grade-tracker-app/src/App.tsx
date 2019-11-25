@@ -1,33 +1,15 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import {
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-  IonMenu, 
-  IonToolbar,
-  IonList,
-  IonContent,
-  IonHeader,
-  IonTitle,
-  IonItem,
-  IonSplitPane,
-  IonPage
-} from '@ionic/react';
+import { IonApp, IonSplitPane, IonPage, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
+
 import { IonReactRouter } from '@ionic/react-router';
-import { apps, flash, send,people,body, archive } from 'ionicons/icons';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
 import Home from './pages/Home'; 
 import Details from './pages/Details';
-import { slide as Menu } from 'react-burger-menu';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import SideMenu from './components/SideMenu';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -49,18 +31,14 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-export const App: React.FC = () => (
+
+const App = () => (
   <Router>
     <div id="app">
       <IonApp>
         <IonSplitPane contentId="main">
-          <div id="menu">
-            <IonToolbar>
-              <IonTitle>
-                Menu
-              </IonTitle>
-            </IonToolbar>
-          </div>
+        <SideMenu></SideMenu>
+  
           <IonPage id="main">
             <Switch>
             <Route path="/CrsMgmt" component={Home} exact={true} />

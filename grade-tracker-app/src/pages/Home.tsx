@@ -17,7 +17,7 @@ const Home = () => {
               This is my first Ionic React application!
               <div>
                   <IonButton onClick={() => showToast()}>
-                      Show toast
+                      Show the toast
                   </IonButton>
                   <IonToast
                       isOpen={toastIsShown}

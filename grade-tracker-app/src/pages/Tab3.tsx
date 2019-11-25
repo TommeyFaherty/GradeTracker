@@ -1,6 +1,5 @@
 import { IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
 import React, { useState } from 'react';
-import { apps, flash, send,people } from 'ionicons/icons';
 
 
 interface Person {
