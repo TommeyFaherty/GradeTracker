@@ -1,6 +1,6 @@
 import { IonContent, IonButton, IonHeader,IonMenuButton,IonMenu,IonIcon, IonItem, IonInput, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
-import { apps, flash, send,people,body,home } from 'ionicons/icons';
+//import LogIn from '../components/LogIn';
 
 const Tab2: React.FC = () => {
   return (
@@ -21,7 +21,6 @@ const Tab2: React.FC = () => {
             <IonInput type="password" placeholder="Password"></IonInput>
           </IonItem>
         </IonList>
-
         <IonButton>Log In </IonButton>
       </IonContent>
     </IonPage>

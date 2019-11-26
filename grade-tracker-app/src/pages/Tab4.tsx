@@ -7,7 +7,10 @@ const Tab4: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Authentication</IonTitle>
+          <IonTitle>Home</IonTitle>
+          <div>
+            <IonButton shape="round">Round Button</IonButton>
+          </div>
         </IonToolbar>
       </IonHeader>
       <IonContent>
