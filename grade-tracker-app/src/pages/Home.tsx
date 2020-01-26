@@ -22,9 +22,9 @@ const Home = () => {
   };
 
   //method for button goes here
-  function example() {
+  function loginBtnClicked() {
     console.log("button clicked");
-    return <LogIn />;
+    return <LogIn/>;
   }
 
   return (
@@ -36,7 +36,7 @@ const Home = () => {
             <IonButton
               onClick={() => {
                 {
-                  example();
+                  loginBtnClicked();
                 }
               }}
               class="ion-float-right"
@@ -48,24 +48,6 @@ const Home = () => {
       </IonHeader>
 
       <IonContent>
-        <div>
-          <h3>Numero Uno</h3>
-          <p>Run down of app (functionality)</p>
-          <h3>Number Two</h3>
-          <p>Screenshots of app working (examples)</p>
-          <p> -Intro + feature page similar</p>
-          <p>
-            {" "}
-            -Show one screenshot on intro and have btn link to feature page
-          </p>
-          <h3>Numbre trois</h3>
-          <p>Pictures/video?</p>
-          <h3>Uimhir a ceathar</h3>
-          <p>Why this application is useful</p>
-          <h3>Nummer funf</h3>
-          <p>Mobile intro</p>
-          <p> -Link to feature page</p>
-        </div>
       </IonContent>
     </IonPage>
   );
