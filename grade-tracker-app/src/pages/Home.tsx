@@ -48,6 +48,9 @@ const Home = () => {
       </IonHeader>
 
       <IonContent>
+        <body>
+              <p>Look at all this content...</p>
+        </body>
       </IonContent>
     </IonPage>
   );
