@@ -42,8 +42,6 @@ const Home = () => {
       </IonHeader>
 
       <IonContent>
-        <h2> Register here! </h2>
-
         <IonCard>
           <IonHeader>What is Gracker?</IonHeader>
           <IonCardContent>

@@ -1,6 +1,8 @@
 import { IonContent, IonButton, IonHeader,IonItem, IonInput,IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { toast } from '../components/toast'; 
+import {registerUser} from '../firebaseConfig'; 
 
 const Register: React.FC = () => {
     const [username, setUsername] = useState('')
@@ -8,9 +10,21 @@ const Register: React.FC = () => {
     const [password, setPassword] = useState('')
     const [cpassword, setcPassword] = useState('')
     
-  function regUser(){
-      console.log(username, password, email)
-  }
+  async function regUser(){
+      //validation 
+      if (password !== cpassword){
+
+          return toast('Passwords do not match ')
+      }
+        if(email.trim() === ''|| password.trim()===''){
+            return toast('Please enter email and password')
+        }
+        //*NOTE MAY NEED TO CHANGE THIS LATER TO ADD USERNAME*
+        const res = await registerUser(email,password)
+        if(res){
+            return toast('You have registered!')
+        }
+    }
     
       return (
   
