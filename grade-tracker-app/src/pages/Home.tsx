@@ -12,7 +12,7 @@ import {
   IonContent
 } from "@ionic/react";
 //import { IonPage } from '@ionic/react/dist/types/components/IonPage';
-import LogIn from "../components/LogIn";
+import LogIn from "./LogIn";
 
 const Home = () => {
   const [toastIsShown, setToastIsShown] = useState(false);
@@ -21,11 +21,6 @@ const Home = () => {
     setToastIsShown(true);
   };
 
-  //method for button goes here
-  function loginBtnClicked() {
-    console.log("button clicked");
-    return <LogIn/>;
-  }
 
   return (
     <IonPage>
@@ -34,13 +29,8 @@ const Home = () => {
           <h1>
             TITLE TBD/gracker
             <IonButton
-              onClick={() => {
-                {
-                  loginBtnClicked();
-                }
-              }}
               class="ion-float-right"
-            >
+              routerLink="/LogIn">
               Log in
             </IonButton>
           </h1>
@@ -48,9 +38,9 @@ const Home = () => {
       </IonHeader>
 
       <IonContent>
-        <body>
-              <p>Look at all this content...</p>
-        </body>
+        <h2> Register here! </h2>
+
+
       </IonContent>
     </IonPage>
   );

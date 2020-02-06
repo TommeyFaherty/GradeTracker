@@ -7,6 +7,8 @@ import CourseMgmtPage from './pages/CourseMgmtPage';
 import FeaturesPage from './pages/FeaturesPage';
 import SubjectsPage from './pages/SubjectsPage';
 import Home from './pages/Home'; 
+import LogIn from './pages/LogIn'; 
+import Register from './pages/Register'; 
 import Details from './pages/Details';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SideMenu from './components/SideMenu';
@@ -30,7 +32,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { LogIn } from './components/LogIn';
+
 
 
 const App = () => (
@@ -44,6 +46,8 @@ const App = () => (
           <IonPage id="main">
             <Switch>
             <Route path="/CrsMgmt" component={Home} exact={true} />
+            <Route path="/LogIn" component={LogIn} exact={true} />
+            <Route path="/Register" component={Register} exact={true} />
             <Route path="/CourseMgmtPage" component={CourseMgmtPage} exact={true} />
             <Route path="/CourseMgmtPage/details" component={Details} />
             <Route path="/FeaturesPage" component={FeaturesPage} />
