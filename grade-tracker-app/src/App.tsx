@@ -3,9 +3,9 @@ import { Redirect } from 'react-router-dom';
 import { IonApp, IonSplitPane, IonPage, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
 
 import { IonReactRouter } from '@ionic/react-router';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
-import Tab4 from './pages/Tab4';
+import CourseMgmtPage from './pages/CourseMgmtPage';
+import FeaturesPage from './pages/FeaturesPage';
+import SubjectsPage from './pages/SubjectsPage';
 import Home from './pages/Home'; 
 import Details from './pages/Details';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -44,10 +44,10 @@ const App = () => (
           <IonPage id="main">
             <Switch>
             <Route path="/CrsMgmt" component={Home} exact={true} />
-            <Route path="/tab2" component={Tab2} exact={true} />
-            <Route path="/tab2/details" component={Details} />
-            <Route path="/tab3" component={Tab3} />
-            <Route path="/tab4" component={Tab4} />
+            <Route path="/CourseMgmtPage" component={CourseMgmtPage} exact={true} />
+            <Route path="/CourseMgmtPage/details" component={Details} />
+            <Route path="/FeaturesPage" component={FeaturesPage} />
+            <Route path="/SubjectsPage" component={SubjectsPage} />
             <Route path="/" component={Home} />} 
             </Switch>
           </IonPage>

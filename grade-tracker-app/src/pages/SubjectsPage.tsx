@@ -2,7 +2,7 @@ import { IonContent, IonButton, IonHeader, IonItem, IonInput, IonLabel, IonList,
 import React, { useState } from 'react';
 import { apps, flash, send,people,body } from 'ionicons/icons';
 
-const Tab4: React.FC = () => {
+const SubjectsPage: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -29,4 +29,4 @@ const Tab4: React.FC = () => {
   );
 };
 
-export default Tab4;
+export default SubjectsPage;

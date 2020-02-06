@@ -9,7 +9,7 @@ interface Person {
   photo: string;
 }
 
-const Tab3Page: React.FC = () => {
+const FeaturesPage: React.FC = () => {
 
   const [people, setPeople] = useState<Person[]>([]);
 
@@ -69,4 +69,4 @@ const EmployeeItem: React.FC<{ person: Person }> = ({ person }) => {
   );
 }
 
-export default Tab3Page;
+export default FeaturesPage;

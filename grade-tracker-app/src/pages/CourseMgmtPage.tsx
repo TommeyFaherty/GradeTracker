@@ -2,7 +2,7 @@ import { IonContent, IonButton, IonHeader,IonMenuButton,IonMenu,IonIcon, IonItem
 import React, { useState } from 'react';
 //import LogIn from '../components/LogIn';
 
-const Tab2: React.FC = () => {
+const CourseMgmtPage: React.FC = () => {
   return (
 
     <IonPage>
@@ -27,4 +27,4 @@ const Tab2: React.FC = () => {
   );
 };
 
-export default Tab2;
+export default CourseMgmtPage;

@@ -12,8 +12,9 @@ interface Page {
 
 const pages: Page[] = [
     { title: 'Home', path: '/', icon: 'home' },
-    { title: 'Contact us', path: '/tab2', icon: 'information' },  
-    { title: 'Features', path: '/tab3', icon: 'information' }
+    { title: 'Course Management', path: '/CourseMgmtPage', icon: 'information' },
+    { title: 'Subjects', path: '/SubjectsPage', icon: 'information' },  
+    { title: 'Features', path: '/FeaturesPage', icon: 'information' },
 ];
 
 type Props = RouteComponentProps<{}>;
