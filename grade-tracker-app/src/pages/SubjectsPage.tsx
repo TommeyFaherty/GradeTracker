@@ -7,23 +7,11 @@ const SubjectsPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Home</IonTitle>
-          <div>
-            <IonButton shape="round">Round Button</IonButton>
-          </div>
+          <IonTitle>Subjects</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonList>
-          <IonItem>
-            <IonInput placeholder="Username"></IonInput>
-          </IonItem>
-          <IonItem>
-            <IonInput type="password" placeholder="Password"></IonInput>
-          </IonItem>
-        </IonList>
-
-        <IonButton>Log In </IonButton>
+  
       </IonContent>
     </IonPage>
   );
