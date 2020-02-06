@@ -1,14 +1,21 @@
 import { IonContent, IonButton, IonHeader,IonItem, IonInput,IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-
+import { logUser } from '../firebaseConfig'; 
+import { toast } from '../components/toast'; 
 
 const LogIn: React.FC = () => {
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   
-function logUser(){
-    console.log(username, password)
+  async function loginUser(){
+   const res = await logUser(email, password)
+   if(!res){
+        toast('Email and password combination was incorrect')
+   }
+   else {
+    toast('Logged in')
+    }
 }
   
     return (
@@ -24,8 +31,8 @@ function logUser(){
         <IonList>
           <IonItem>
             <IonInput 
-            onIonChange={(e: any) => setUsername(e.target.value)}
-            placeholder="Username"></IonInput>
+            onIonChange={(e: any) => setEmail(e.target.value)}
+            placeholder="Email"></IonInput>
           </IonItem>
           <IonItem>
             <IonInput 
@@ -33,7 +40,7 @@ function logUser(){
             type="password" placeholder="Password"></IonInput>
           </IonItem>
         </IonList>
-        <IonButton onClick={logUser}>Log In </IonButton>
+        <IonButton onClick={loginUser}>Log In </IonButton>
         <p>
             Don't have an account? click <Link to="./Register"> here </Link>
         </p>
