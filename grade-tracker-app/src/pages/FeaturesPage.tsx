@@ -1,4 +1,4 @@
-import { IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
+import { IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, useIonViewWillEnter, IonCard } from '@ionic/react';
 import React, { useState } from 'react';
 
 
@@ -29,24 +29,29 @@ const FeaturesPage: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-      <div>
-          <h3>Numero Uno</h3>
-          <p>Run down of app (functionality)</p>
-          <h3>Number Two</h3>
-          <p>Screenshots of app working (examples)</p>
-          <p> -Intro + feature page similar</p>
+      <IonCard>
+        <IonHeader>Page Requirements</IonHeader>
+        <IonTitle>Numero One</IonTitle>
+          <p> - Run down of app (functionality)</p>
+
+          <IonTitle>Number Two</IonTitle>
+          <p> - Screenshots of app working (examples)</p>
+          <p> - Intro + feature page similar</p>
           <p>
             {" "}
-            -Show one screenshot on intro and have btn link to feature page
+            - Show one screenshot on intro and have btn link to feature page
           </p>
-          <h3>Numbre trois</h3>
-          <p>Pictures/video?</p>
-          <h3>Uimhir a ceathar</h3>
-          <p>Why this application is useful</p>
-          <h3>Nummer funf</h3>
-          <p>Mobile intro</p>
-          <p> -Link to feature page</p>
-        </div>
+          
+          <IonTitle>Number three</IonTitle>
+          <p> - Pictures/video?</p>
+          
+          <IonTitle>Number four</IonTitle>
+          <p> - Why this application is useful</p>
+          
+          <IonTitle>Number five</IonTitle>
+          <p> - Mobile intro</p>
+          <p> - Link to feature page</p>
+        </IonCard>
         <IonList>
           {people.map((person, idx) => <EmployeeItem key={idx} person={person} />)}
         </IonList>

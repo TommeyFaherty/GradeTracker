@@ -5,19 +5,15 @@
 
 /*Ion Card stylings*/
 ion-card{
+  padding-top: 2%;
   display: flex;
   flex-direction: column;
   width: 70% !important;
   margin: 0 !important;
 
   ion-header{
-    padding-top: 2%;
     font-size: 150%;
     color: black;
     text-align: center;
   }
-}
-
-ion-header{
-
 }
