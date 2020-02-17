@@ -35,8 +35,9 @@ import './theme/variables.css';
 
 
 
-const App = () => (
-  <Router>
+const App: React.FC = () => {
+  
+  return <Router>
     <div id="app">
       <IonApp>
         <IonSplitPane contentId="main">
@@ -59,6 +60,6 @@ const App = () => (
       </IonApp>
     </div>
   </Router>
-);
+}
 
 export default App;

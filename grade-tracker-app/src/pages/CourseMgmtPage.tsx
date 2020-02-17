@@ -18,7 +18,7 @@ const CourseMgmtPage: React.FC = () => {
             <IonInput placeholder="ignore for now"></IonInput>
           </IonItem>
           <IonItem>
-            <IonInput type="ignore for now" placeholder="ignore for now"></IonInput>
+            <IonInput  placeholder="ignore for now"></IonInput>
           </IonItem>
         </IonList>
         <IonButton>Log In </IonButton>
