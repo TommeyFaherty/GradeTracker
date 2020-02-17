@@ -8,17 +8,17 @@ const CourseMgmtPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Authentication</IonTitle>
+          <IonTitle>Testing Course Management</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
 
         <IonList>
           <IonItem>
-            <IonInput placeholder="Username"></IonInput>
+            <IonInput placeholder="ignore for now"></IonInput>
           </IonItem>
           <IonItem>
-            <IonInput type="password" placeholder="Password"></IonInput>
+            <IonInput type="ignore for now" placeholder="ignore for now"></IonInput>
           </IonItem>
         </IonList>
         <IonButton>Log In </IonButton>

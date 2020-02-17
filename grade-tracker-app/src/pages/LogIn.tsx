@@ -1,14 +1,17 @@
-import { IonContent, IonButton, IonHeader,IonItem, IonInput,IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonButton, IonHeader,IonItem, IonInput,IonList, IonPage, IonTitle, IonToolbar, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { logUser } from '../firebaseConfig'; 
 import { toast } from '../components/toast'; 
 
 const LogIn: React.FC = () => {
+
+  const [busy, setBusy] = useState<boolean>(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   
   async function loginUser(){
+    setBusy(true)
    const res = await logUser(email, password)
    if(!res){
         toast('Email and password combination was incorrect')
@@ -16,6 +19,7 @@ const LogIn: React.FC = () => {
    else {
     toast('Logged in')
     }
+    setBusy(false)
 }
   
     return (
@@ -26,6 +30,7 @@ const LogIn: React.FC = () => {
           <IonTitle>Log In</IonTitle>
         </IonToolbar>
       </IonHeader>
+      <IonLoading message="Be patient.." duration={0} isOpen={busy}/>
       <IonContent>
 
         <IonList>

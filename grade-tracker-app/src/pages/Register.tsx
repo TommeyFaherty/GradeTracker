@@ -1,4 +1,4 @@
-import { IonContent, IonButton, IonHeader,IonItem, IonInput,IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonButton,IonLoading, IonHeader,IonItem, IonInput,IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { toast } from '../components/toast'; 
@@ -9,9 +9,10 @@ const Register: React.FC = () => {
     const [email, setEmail] = useState('')    
     const [password, setPassword] = useState('')
     const [cpassword, setcPassword] = useState('')
-    
+    const [busy, setBusy] = useState<boolean>(false)
   async function regUser(){
       //validation 
+      setBusy(true)
       if (password !== cpassword){
 
           return toast('Passwords do not match ')
@@ -24,6 +25,7 @@ const Register: React.FC = () => {
         if(res){
             return toast('You have registered!')
         }
+        setBusy(false)
     }
     
       return (
@@ -35,7 +37,9 @@ const Register: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <IonContent>
-  
+
+        <IonLoading message="Trying to register you!"  duration={0} isOpen={busy}/>
+
           <IonList>
             <IonItem>
                 <IonInput 
