@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
-import { IonApp, IonSplitPane, IonPage, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
+import { IonApp, IonSplitPane, IonPage, IonHeader, IonToolbar, IonTitle, IonSpinner } from '@ionic/react';
 
 import { IonReactRouter } from '@ionic/react-router';
 import CourseMgmtPage from './pages/CourseMgmtPage';
@@ -33,11 +33,12 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+//firebase
+import { getCurrentUser } from './firebaseConfig'
 
-
-const App: React.FC = () => {
+const RoutingSystem: React.FC = () => {
   
-  return <Router>
+ return <Router>
     <div id="app">
       <IonApp>
         <IonSplitPane contentId="main">
@@ -61,5 +62,24 @@ const App: React.FC = () => {
     </div>
   </Router>
 }
+
+const App: React.FC = () => {
+  
+  const [busy, setBusy] = useState(true)
+  useEffect(() => {
+  getCurrentUser().then(user =>{
+    if (user) {
+    //regular login
+    window.history.replaceState({}, '', '/CourseMgmtPage')    
+    }
+    else {
+      window.history.replaceState({}, '', '/')              
+    }
+    setBusy(false)
+  })
+  }, [])
+  return <IonApp>{busy ? <IonSpinner/>: <RoutingSystem/>}</IonApp>
+}
+ 
 
 export default App;
