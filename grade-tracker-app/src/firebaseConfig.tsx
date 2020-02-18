@@ -30,13 +30,16 @@ export async function logUser(email:string, password:string) {
         const res = await firebase.auth().signInWithEmailAndPassword(email,password)
     
         console.log(res)
-        return true
+        return res
     } catch(error){
         console.log(error)
         return false
     }
 }
 
+export function logoutUser(){
+    return firebase.auth().signOut()
+}
 export async function registerUser(email:string, password:string){
     try {
         const res = await firebase.auth().createUserWithEmailAndPassword(email,password)

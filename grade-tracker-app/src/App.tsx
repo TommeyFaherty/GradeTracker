@@ -34,7 +34,13 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 //firebase
+import * as firebase from 'firebase'
+
 import { getCurrentUser } from './firebaseConfig'
+
+import{ setUserState } from './redux/actions'
+
+import { useDispatch } from 'react-redux'
 
 const RoutingSystem: React.FC = () => {
   
@@ -64,16 +70,19 @@ const RoutingSystem: React.FC = () => {
 }
 
 const App: React.FC = () => {
-  
   const [busy, setBusy] = useState(true)
+  const dispatch = useDispatch()
   useEffect(() => {
-  getCurrentUser().then(user =>{
+  getCurrentUser().then((user:any) =>{
+    console.log(user)
     if (user) {
     //regular login
+    console.log('user: ',firebase.auth().currentUser)
+    dispatch(setUserState(user.email))
     window.history.replaceState({}, '', '/CourseMgmtPage')    
     }
     else {
-      window.history.replaceState({}, '', '/')              
+      window.history.replaceState({}, '', '/LogIn')              
     }
     setBusy(false)
   })
