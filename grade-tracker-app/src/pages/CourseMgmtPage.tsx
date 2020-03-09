@@ -1,24 +1,37 @@
-import { IonContent, IonButton, IonHeader,IonMenuButton,IonMenu,IonIcon, IonItem, IonInput, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent } from '@ionic/react';
+import { IonContent, IonButton, IonHeader,IonMenuButton,IonMenu,IonIcon, IonItem, IonInput, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonActionSheet } from '@ionic/react';
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { logoutUser } from '../firebaseConfig'
 import {useHistory} from 'react-router';
+import '../styles/CourseMgmtPage.scss';
+import { setUserState } from '../redux/actions';
+import { toast } from '../components/toast';
 
-const CourseMgmtPage: React.FC = () => {
+export const CourseMgmtPage: React.FC = () => {
 
-  const username = useSelector((state:any) => state.user.username)
-  const [course, setCourse] = useState(''); 
-  const history = useHistory()
+  const username = useSelector((state:any) => state.user.username);
+  const history = useHistory();
 
-  //let element: HTMLElement = document.getElementsByClassName('btn')[0] as HTMLElement;
-  //element.click();
+  const [course, setCourse] = useState('');
+  const [year, setYear] = useState('');
+  const [module, setModule] = useState('');
+  const [hidden, setHidden] = useState(true);
 
   async  function logout(){
     await logoutUser()
      history.replace('./')
   }
-  return (
 
+  function showContent(e: any) {
+
+    if(course != '')
+      setHidden(false);
+    else
+      console.log("module empty");
+      toast("Enter Module");
+  }
+
+  return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
@@ -29,15 +42,51 @@ const CourseMgmtPage: React.FC = () => {
       </IonHeader>
       <IonContent>
         <p>hello {username} </p>
+        <p>{course}</p>
+        <p>hidden is {hidden.toString()}</p>
         <IonCard>
-          <IonCardContent> 
+          <IonCardContent>
             <IonTitle>Enter your current course:</IonTitle>
             <IonInput 
               placeholder="Enter Course" 
               value={course}
               onIonChange={(e: any) => setCourse(e.target.value)}
             />
-            <IonButton rel="">Enter</IonButton>
+            <IonButton onClick={(e: any) => showContent(e)} hidden={!hidden}>Enter</IonButton>
+          </IonCardContent>
+        </IonCard>
+
+        <IonCard hidden={hidden}>
+          <IonCardContent class="testClass">
+            <IonTitle>Enter current Year:</IonTitle>
+            <IonInput placeholder="Year"
+            value={year}
+            onIonChange={(e: any) => setYear(e.target.value)}
+            ></IonInput>
+          </IonCardContent>
+          
+          <IonCardContent>
+            <IonTitle>Enter your modules/subjects: </IonTitle>
+            <IonInput placeholder="modules"
+            value={module}
+            onIonChange={(e: any) => setModule(e.target.value)}
+            />
+            <IonButton>Input assessment details</IonButton>
+          </IonCardContent>
+        </IonCard>
+
+        <IonCard hidden={hidden}>
+          <IonCardContent>
+            <IonTitle>Enter exams weight: </IonTitle>
+            <IonInput placeholder="weight"
+            value={module}
+            onIonChange={(e: any) => setModule(e.target.value)}
+            />
+            <IonTitle>Enter result as percentage: </IonTitle>
+            <IonInput placeholder="percentage"
+            value={module}
+            onIonChange={(e: any) => setModule(e.target.value)}
+            />
           </IonCardContent>
         </IonCard>
       </IonContent>
