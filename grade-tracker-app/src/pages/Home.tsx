@@ -15,6 +15,8 @@ import {
 //import { IonPage } from '@ionic/react/dist/types/components/IonPage';
 import LogIn from "./LogIn";
 import '../styles/Home.scss';
+import { Link, useHistory } from "react-router-dom";
+
 
 const Home = () => {
   const [toastIsShown, setToastIsShown] = useState(false);
@@ -46,7 +48,7 @@ const Home = () => {
           <IonHeader>What is Gracker?</IonHeader>
           <IonCardContent>
             Gracker is a web-app designed to help students keep track of their grades throughout their academic terms.
-            It's clean layout and simplitic design allows for easy navigation and a better overall user experience.  
+            It's clean layout and simplistic design allows for easy navigation and a better overall user experience.  
           </IonCardContent>
         </IonCard>
   
@@ -63,7 +65,8 @@ const Home = () => {
           <IonHeader>How do I use it?</IonHeader>
           <IonCardContent>
             Simply click on the log in button in the top right. Then click the link to create a new account and you 
-            can get started immediately!  
+            can get started immediately!  See more features 
+            <Link to="./FeaturesPage"> here </Link>
           </IonCardContent>
         </IonCard>
 

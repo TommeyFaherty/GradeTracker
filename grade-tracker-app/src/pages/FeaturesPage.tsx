@@ -1,5 +1,6 @@
-import { IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, useIonViewWillEnter, IonCard } from '@ionic/react';
+import { IonCardContent, IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, useIonViewWillEnter, IonCard } from '@ionic/react';
 import React, { useState } from 'react';
+import { Link, useHistory } from "react-router-dom";
 
 
 interface Person {
@@ -30,6 +31,16 @@ const FeaturesPage: React.FC = () => {
       </IonHeader>
       <IonContent>
       <IonCard>
+      <IonCard color="primary">
+          <IonHeader>The Rundown!</IonHeader>
+          <IonCardContent>
+            This app allows you to log in and enter your module and course details! 
+            You can easily keep track of what subjects and grades you receive. 
+            When you first load the page you will be instructed to log in or create an account. 
+            After logging in the course management page appears. The course management page allows
+            the user to enter module, and year that they are in. 
+          </IonCardContent>
+        </IonCard>
         <IonHeader>Page Requirements</IonHeader>
         <IonTitle>Numero One</IonTitle>
           <p> - Run down of app (functionality)</p>
