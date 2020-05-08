@@ -41,11 +41,16 @@ const FeaturesPage: React.FC = () => {
             the user to enter module, and year that they are in. 
           </IonCardContent>
         </IonCard>
-        <IonHeader>Page Requirements</IonHeader>
-        <IonTitle>Numero One</IonTitle>
-          <p> - Run down of app (functionality)</p>
+        <IonCard color="medium">
+          <IonHeader >How to use this app: </IonHeader>
+          <IonCardContent>
+            Gracker is here to help you stay organised. It allows a space for you to access your results easily and 
+            consistently. Being able to track your academic highs and lows can help students understand where they need 
+            to focus more and could be the visual motivator needed. 
+          </IonCardContent>
+        </IonCard>
 
-          <IonTitle>Number Two</IonTitle>
+          <IonTitle>How to use this app!</IonTitle>
           <p> - Screenshots of app working (examples)</p>
           <p> - Intro + feature page similar</p>
           <p>

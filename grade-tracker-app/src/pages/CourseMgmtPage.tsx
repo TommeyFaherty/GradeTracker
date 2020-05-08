@@ -14,7 +14,9 @@ export const CourseMgmtPage: React.FC = () => {
 
   const [course, setCourse] = useState('');
   const [year, setYear] = useState('');
+  const [examWeight, setExamWeight] = useState('');
   const [module, setModule] = useState('');
+
   const [hidden, setHidden] = useState(true);
 
   async  function logout(){
@@ -40,10 +42,12 @@ export const CourseMgmtPage: React.FC = () => {
           </IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
-        <p>hello {username} </p>
-        <p>{course}</p>
-        <p>hidden is {hidden.toString()}</p>
+      <IonContent> 
+        <p>hello {username} </p> 
+        <p>Course: {course}</p>
+        <p>Year: {year}</p>
+        <p>Module: {module}</p>
+        <p>Module Exam Weight: {examWeight}</p>
         <IonCard>
           <IonCardContent>
             <IonTitle>Enter your current course:</IonTitle>
@@ -79,13 +83,11 @@ export const CourseMgmtPage: React.FC = () => {
           <IonCardContent>
             <IonTitle>Enter exams weight: </IonTitle>
             <IonInput placeholder="weight"
-            value={module}
-            onIonChange={(e: any) => setModule(e.target.value)}
+            value={examWeight}
+            onIonChange={(e: any) => setExamWeight(e.target.value)}
             />
             <IonTitle>Enter result as percentage: </IonTitle>
             <IonInput placeholder="percentage"
-            value={module}
-            onIonChange={(e: any) => setModule(e.target.value)}
             />
           </IonCardContent>
         </IonCard>
@@ -95,3 +97,4 @@ export const CourseMgmtPage: React.FC = () => {
 };
 
 export default CourseMgmtPage;
+//This page stores the year, course and modules for each user. 
