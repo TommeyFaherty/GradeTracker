@@ -1,14 +1,17 @@
-import { IonCardContent, IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, useIonViewWillEnter, IonCard } from '@ionic/react';
+import { IonImg, IonCardContent, IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, useIonViewWillEnter, IonCard } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link, useHistory } from "react-router-dom";
-
-
 interface Person {
   name: string;
   email: string;
   position: string;
   photo: string;
 }
+type Item = {
+  src: string;
+  text: string;
+};
+
 
 const FeaturesPage: React.FC = () => {
 
@@ -44,33 +47,14 @@ const FeaturesPage: React.FC = () => {
         <IonCard color="medium">
           <IonHeader >How to use this app: </IonHeader>
           <IonCardContent>
-            Gracker is here to help you stay organised. It allows a space for you to access your results easily and 
-            consistently. Being able to track your academic highs and lows can help students understand where they need 
-            to focus more and could be the visual motivator needed. 
+            When page is loaded, you are brought to the login page. Here you are instructed to log in 
+            or create an account.            
+            When your account is created you are guided to the course management page.
           </IonCardContent>
         </IonCard>
 
-          <IonTitle>How to use this app!</IonTitle>
-          <p> - Screenshots of app working (examples)</p>
-          <p> - Intro + feature page similar</p>
-          <p>
-            {" "}
-            - Show one screenshot on intro and have btn link to feature page
-          </p>
-          
-          <IonTitle>Number three</IonTitle>
-          <p> - Pictures/video?</p>
-          
-          <IonTitle>Number four</IonTitle>
-          <p> - Why this application is useful</p>
-          
-          <IonTitle>Number five</IonTitle>
-          <p> - Mobile intro</p>
-          <p> - Link to feature page</p>
         </IonCard>
-        <IonList>
-          {people.map((person, idx) => <EmployeeItem key={idx} person={person} />)}
-        </IonList>
+
       </IonContent>
     </IonPage>
   );
