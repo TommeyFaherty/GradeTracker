@@ -7,7 +7,27 @@ This application is a web application made for students to easily keep track of 
 
 How to run
 =============
+
+# Running the web app
+***
+If you are planning on running our web-application locally you will need Node.js to make several installations. 
+
+## Getting Ionic Project running
+
+**npm install -g @ionic/cli**
+
+**npm i firebase**
+
+**npm install redux**
+
+**npm install react-redux --save**
+
+**npm install @types/react-redux**
+
+**npm install node-sass**
+
+After you have finished installing these, to run the web application locate where you cloned the repository and redirect the command-line into *GradeTracker/grade-tracker-app*
+
+Type: **ionic serve**
 To run you will need to make sure you install the following:
 
-Once the root of the folder is located, run the command "ionic serve" from within the grade_tracker_app folder
-Then open a browser and go to http://localhost:8100/ where the page should be running
