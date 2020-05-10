@@ -82,7 +82,7 @@ export const CourseMgmtPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Testing Course Management
+          <IonTitle>Course Management
             <IonButton onClick={logout} class="ion-float-right">Logout</IonButton>
           </IonTitle>
         </IonToolbar>
