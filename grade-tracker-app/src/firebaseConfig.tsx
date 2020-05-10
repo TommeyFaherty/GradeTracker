@@ -13,6 +13,8 @@ const config = {
 
 firebase.initializeApp(config)
 
+var database = firebase.database();
+
 export function getCurrentUser(){
     return new Promise((resolve, reject) => {
         const unsubscribe = firebase.auth().onAuthStateChanged(function(user){
